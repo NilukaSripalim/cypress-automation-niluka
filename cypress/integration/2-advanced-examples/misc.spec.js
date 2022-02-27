@@ -1,3 +1,12 @@
+/*
+ *   Copyright (c) 2022 WSO2 Inc. (http://www.wso2.org)
+ *   All rights reserved.
+ *   
+ *   This software is the property of WSO2 Inc. and its suppliers, if any.
+ *   Dissemination of any information or reproduction of any material contained
+ *   herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
+ *   You may not alter or remove any copyright or other notice from copies of this content.
+ */
 /// <reference types="cypress" />
 
 context('Misc', () => {
@@ -75,25 +84,25 @@ context('Misc', () => {
     cy.focused().should('have.id', 'description')
   })
 
-  context('Cypress.Screenshot', function () {
-    it('cy.screenshot() - take a screenshot', () => {
-      // https://on.cypress.io/screenshot
-      cy.screenshot('my-image')
-    })
+  // context('Cypress.Screenshot', function () {
+  //   it('cy.screenshot() - take a screenshot', () => {
+  //     // https://on.cypress.io/screenshot
+  //     cy.screenshot('my-image')
+  //   })
 
-    it('Cypress.Screenshot.defaults() - change default config of screenshots', function () {
-      Cypress.Screenshot.defaults({
-        blackout: ['.foo'],
-        capture: 'viewport',
-        clip: { x: 0, y: 0, width: 200, height: 200 },
-        scale: false,
-        disableTimersAndAnimations: true,
-        screenshotOnRunFailure: true,
-        onBeforeScreenshot () { },
-        onAfterScreenshot () { },
-      })
-    })
-  })
+  //   it('Cypress.Screenshot.defaults() - change default config of screenshots', function () {
+  //     Cypress.Screenshot.defaults({
+  //       blackout: ['.foo'],
+  //       capture: 'viewport',
+  //       clip: { x: 0, y: 0, width: 200, height: 200 },
+  //       scale: false,
+  //       disableTimersAndAnimations: true,
+  //       screenshotOnRunFailure: true,
+  //       onBeforeScreenshot () { },
+  //       onAfterScreenshot () { },
+  //     })
+  //   })
+  // })
 
   it('cy.wrap() - wrap an object', () => {
     // https://on.cypress.io/wrap

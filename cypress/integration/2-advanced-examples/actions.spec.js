@@ -1,3 +1,12 @@
+/*
+ *   Copyright (c) 2022 WSO2 Inc. (http://www.wso2.org)
+ *   All rights reserved.
+ *   
+ *   This software is the property of WSO2 Inc. and its suppliers, if any.
+ *   Dissemination of any information or reproduction of any material contained
+ *   herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
+ *   You may not alter or remove any copyright or other notice from copies of this content.
+ */
 /// <reference types="cypress" />
 
 context('Actions', () => {
@@ -64,53 +73,53 @@ context('Actions', () => {
       .next().should('contain', 'Your form has been submitted!')
   })
 
-  it('.click() - click on a DOM element', () => {
-    // https://on.cypress.io/click
-    cy.get('.action-btn').click()
+  // it('.click() - click on a DOM element', () => {
+  //   // https://on.cypress.io/click
+  //   cy.get('.action-btn').click()
 
-    // You can click on 9 specific positions of an element:
-    //  -----------------------------------
-    // | topLeft        top       topRight |
-    // |                                   |
-    // |                                   |
-    // |                                   |
-    // | left          center        right |
-    // |                                   |
-    // |                                   |
-    // |                                   |
-    // | bottomLeft   bottom   bottomRight |
-    //  -----------------------------------
+  //   // You can click on 9 specific positions of an element:
+  //   //  -----------------------------------
+  //   // | topLeft        top       topRight |
+  //   // |                                   |
+  //   // |                                   |
+  //   // |                                   |
+  //   // | left          center        right |
+  //   // |                                   |
+  //   // |                                   |
+  //   // |                                   |
+  //   // | bottomLeft   bottom   bottomRight |
+  //   //  -----------------------------------
 
-    // clicking in the center of the element is the default
-    cy.get('#action-canvas').click()
+  //   // clicking in the center of the element is the default
+  //   cy.get('#action-canvas').click()
 
-    cy.get('#action-canvas').click('topLeft')
-    cy.get('#action-canvas').click('top')
-    cy.get('#action-canvas').click('topRight')
-    cy.get('#action-canvas').click('left')
-    cy.get('#action-canvas').click('right')
-    cy.get('#action-canvas').click('bottomLeft')
-    cy.get('#action-canvas').click('bottom')
-    cy.get('#action-canvas').click('bottomRight')
+  //   cy.get('#action-canvas').click('topLeft')
+  //   cy.get('#action-canvas').click('top')
+  //   cy.get('#action-canvas').click('topRight')
+  //   cy.get('#action-canvas').click('left')
+  //   cy.get('#action-canvas').click('right')
+  //   cy.get('#action-canvas').click('bottomLeft')
+  //   cy.get('#action-canvas').click('bottom')
+  //   cy.get('#action-canvas').click('bottomRight')
 
-    // .click() accepts an x and y coordinate
-    // that controls where the click occurs :)
+  //   // .click() accepts an x and y coordinate
+  //   // that controls where the click occurs :)
 
-    cy.get('#action-canvas')
-      .click(80, 75) // click 80px on x coord and 75px on y coord
-      .click(170, 75)
-      .click(80, 165)
-      .click(100, 185)
-      .click(125, 190)
-      .click(150, 185)
-      .click(170, 165)
+  //   cy.get('#action-canvas')
+  //     .click(80, 75) // click 80px on x coord and 75px on y coord
+  //     .click(170, 75)
+  //     .click(80, 165)
+  //     .click(100, 185)
+  //     .click(125, 190)
+  //     .click(150, 185)
+  //     .click(170, 165)
 
-    // click multiple elements by passing multiple: true
-    cy.get('.action-labels>.label').click({ multiple: true })
+  //   // click multiple elements by passing multiple: true
+  //   cy.get('.action-labels>.label').click({ multiple: true })
 
-    // Ignore error checking prior to clicking
-    cy.get('.action-opacity>.btn').click({ force: true })
-  })
+  //   // Ignore error checking prior to clicking
+  //   cy.get('.action-opacity>.btn').click({ force: true })
+  // })
 
   it('.dblclick() - double click on a DOM element', () => {
     // https://on.cypress.io/dblclick

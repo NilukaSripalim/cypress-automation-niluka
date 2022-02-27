@@ -1,3 +1,12 @@
+/*
+ *   Copyright (c) 2022 WSO2 Inc. (http://www.wso2.org)
+ *   All rights reserved.
+ *   
+ *   This software is the property of WSO2 Inc. and its suppliers, if any.
+ *   Dissemination of any information or reproduction of any material contained
+ *   herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
+ *   You may not alter or remove any copyright or other notice from copies of this content.
+ */
 /// <reference types="cypress" />
 
 context('Cypress.Commands', () => {
@@ -87,30 +96,30 @@ context('Cypress.config()', () => {
     cy.visit('https://example.cypress.io/cypress-api')
   })
 
-  it('Get and set configuration options', () => {
-    // https://on.cypress.io/config
-    let myConfig = Cypress.config()
+//   it('Get and set configuration options', () => {
+//     // https://on.cypress.io/config
+//     let myConfig = Cypress.config()
 
-    expect(myConfig).to.have.property('animationDistanceThreshold', 5)
-    expect(myConfig).to.have.property('baseUrl', null)
-    expect(myConfig).to.have.property('defaultCommandTimeout', 4000)
-    expect(myConfig).to.have.property('requestTimeout', 5000)
-    expect(myConfig).to.have.property('responseTimeout', 30000)
-    expect(myConfig).to.have.property('viewportHeight', 660)
-    expect(myConfig).to.have.property('viewportWidth', 1000)
-    expect(myConfig).to.have.property('pageLoadTimeout', 60000)
-    expect(myConfig).to.have.property('waitForAnimations', true)
+//     expect(myConfig).to.have.property('animationDistanceThreshold', 5)
+//     expect(myConfig).to.have.property('baseUrl', null)
+//     expect(myConfig).to.have.property('defaultCommandTimeout', 600000)
+//     expect(myConfig).to.have.property('requestTimeout', 5000)
+//     expect(myConfig).to.have.property('responseTimeout', 30000)
+//     expect(myConfig).to.have.property('viewportHeight', 660)
+//     expect(myConfig).to.have.property('viewportWidth', 1000)
+//     expect(myConfig).to.have.property('pageLoadTimeout', 60000)
+//     expect(myConfig).to.have.property('waitForAnimations', true)
 
-    expect(Cypress.config('pageLoadTimeout')).to.eq(60000)
+//     expect(Cypress.config('pageLoadTimeout')).to.eq(60000)
 
-    // this will change the config for the rest of your tests!
-    Cypress.config('pageLoadTimeout', 20000)
+//     // this will change the config for the rest of your tests!
+//     Cypress.config('pageLoadTimeout', 20000)
 
-    expect(Cypress.config('pageLoadTimeout')).to.eq(20000)
+//     expect(Cypress.config('pageLoadTimeout')).to.eq(20000)
 
-    Cypress.config('pageLoadTimeout', 60000)
-  })
-})
+//     Cypress.config('pageLoadTimeout', 60000)
+//   })
+// })
 
 context('Cypress.dom', () => {
   beforeEach(() => {
