@@ -1,0 +1,22 @@
+{
+  "name": "cypress-automation-niluka",
+  "version": "1.0.0",
+  "description": "Example code for series of blog posts and share knowledge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NilukaSripalim/cypress-automation-niluka.git"
+  },
+  "author": "Niluka-Sripali-Monnankulama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NilukaSripalim/cypress-automation-niluka/issues"
+  },
+  "homepage": "https://github.com/NilukaSripalim/cypress-automation-niluka#readme",
+  "devDependencies": {
+    "cypress": "^9.5.0"
+  }
+}
