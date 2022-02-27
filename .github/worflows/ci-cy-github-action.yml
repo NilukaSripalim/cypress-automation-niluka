@@ -55,6 +55,7 @@ jobs:
         with:
           browser: chrome
           headless: true
+          start: npx cypress run
         # after the test run completes
         # store videos and any screenshots
         # NOTE: screenshots will be generated only if E2E test failed
