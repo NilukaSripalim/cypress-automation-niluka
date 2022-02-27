@@ -119,7 +119,7 @@ context('Cypress.config()', () => {
 
 //     Cypress.config('pageLoadTimeout', 60000)
 //   })
-// })
+})
 
 context('Cypress.dom', () => {
   beforeEach(() => {

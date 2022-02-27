@@ -1,3 +1,12 @@
+/*
+ *   Copyright (c) 2022 WSO2 Inc. (http://www.wso2.org)
+ *   All rights reserved.
+ *   
+ *   This software is the property of WSO2 Inc. and its suppliers, if any.
+ *   Dissemination of any information or reproduction of any material contained
+ *   herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
+ *   You may not alter or remove any copyright or other notice from copies of this content.
+ */
 describe('Successfully Sign-in to Asgardeo ', () => {
 
     before(() => {
@@ -16,10 +25,10 @@ describe('Successfully Sign-in to Asgardeo ', () => {
     it("User try to successfully Sign-in", () => {
 
         //Provide username & press Enter.
-        cy.get("#usernameUserInput").type("niluka@wso2.com{enter}", { log: false });
+        cy.get("#usernameUserInput").type("<username>{enter}", { log: false });
 
         //Provide Password & Press Enter
-        cy.get("[data-testid=\"login-page-password-input\"]").type("Wso2@1234{enter}", { log: false });
+        cy.get("[data-testid=\"login-page-password-input\"]").type("<password>{enter}", { log: false });
 
         // Validate whether user able to successfully sign-in.
         cy.get("[data-testid=\"welcome-greeting-header\"]").should("contain", "Welcome")
