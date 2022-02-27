@@ -1,0 +1,73 @@
+# CI name
+name: Cypress GitHub Actions
+
+# The on key is used to define when
+# the CI should be triggered, aka Event
+on:
+  # When someone push or merge a pull request
+  # inside the master branch
+  push:
+    branches:
+      - master
+  # When someone create a pull request from
+  # the master branch
+  pull_request:
+    branches:
+      - master
+
+# A job is a set of steps that execute on the same runner.
+# The jobs can be run in parallel or sequentially and can 
+# have many steps.
+# In this case, I created a single job with many steps
+# since the configuration is pretty simple but
+# I could have created a different structure using parallel jobs.
+# Each job uses an own runner.
+jobs:
+  # Job name
+  suite:
+    # OS of the runner
+    # # We're running on ubuntu-latest, nothing special
+    runs-on: ubuntu-latest
+
+    # A step is an individual task that can run commands in a job
+    # and share the same runner.
+    # Each step can run a ready-to-use action or a bash command
+    steps:
+      # Runner meaningful name
+      # It's a step's name
+      # As usual, we simply checkout the project
+      - name: Checkout
+        # In this line basically our workflow checks our repository 
+        # allowing you to run actions against own code
+        uses: actions/checkout@v2
+
+        # This action is provided by Cypress.
+      - name: Setup and run Cypress
+        # This is a cypress ready-to-use action
+        # that setups the runner installing the 
+        # dependencies using NPM and installing Cypress
+        # Execute all tests cases in project.
+        uses: cypress-io/github-action@v2
+        # The action accepts parameters.
+        # You should read the documentation before using an action
+        # to understand what it does under the hood.
+        # Here Run the tests on Chrome & Headless Mode.
+        with:
+          browser: chrome
+          headless: true
+        # after the test run completes
+        # store videos and any screenshots
+        # NOTE: screenshots will be generated only if E2E test failed
+        # thus we store screenshots only on failures
+        # Alternative: create and commit an empty cypress/screenshots folder
+        # to always have something to upload  
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos  
