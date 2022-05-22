@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/NilukaSripalim/cypress-automation-niluka#readme",
   "devDependencies": {
-    "cypress": "^9.5.0"
+    "cypress": "^9.6.1"
   }
 }
